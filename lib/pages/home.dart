@@ -57,7 +57,46 @@ class _HomeWidgetState extends State<HomeWidget> {
             ),
             trailing: Icon(Icons.more_vert),
             tileColor: Colors.orange[50],
-          )
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, 'container');
+            },
+            title: Text("Container"),
+            subtitle: Text("Ejemplos de container"),
+            leading: Icon(
+              Icons.build_circle,
+              color: Colors.orange,
+            ),
+            trailing: Icon(Icons.more_vert),
+            tileColor: Colors.orange[50],
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, 'input');
+            },
+            title: Text("Input"),
+            subtitle: Text("Ejemplos de Input"),
+            leading: Icon(
+              Icons.receipt,
+              color: Colors.orange,
+            ),
+            trailing: Icon(Icons.more_vert),
+            tileColor: Colors.orange[50],
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, 'card');
+            },
+            title: Text("Card"),
+            subtitle: Text("Ejemplos de Cards"),
+            leading: Icon(
+              Icons.folder_open,
+              color: Colors.orange,
+            ),
+            trailing: Icon(Icons.more_vert),
+            tileColor: Colors.orange[50],
+          ),
         ],
       ),
     );
