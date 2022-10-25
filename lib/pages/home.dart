@@ -97,6 +97,32 @@ class _HomeWidgetState extends State<HomeWidget> {
             trailing: Icon(Icons.more_vert),
             tileColor: Colors.orange[50],
           ),
+          ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, 'lista_productos');
+            },
+            title: Text("Lista de Productos"),
+            subtitle: Text("Ejemplos de Productos"),
+            leading: Icon(
+              Icons.padding,
+              color: Colors.orange,
+            ),
+            trailing: Icon(Icons.more_vert),
+            tileColor: Colors.orange[50],
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.pushNamed(context, 'calculadora');
+            },
+            title: Text("Calculadora"),
+            subtitle: Text("Ejemplos de Calculadora"),
+            leading: Icon(
+              Icons.padding,
+              color: Colors.orange,
+            ),
+            trailing: Icon(Icons.more_vert),
+            tileColor: Colors.orange[50],
+          ),
         ],
       ),
     );

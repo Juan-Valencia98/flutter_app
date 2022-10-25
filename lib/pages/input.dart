@@ -11,6 +11,7 @@ class _InputWidgetState extends State<InputWidget> {
   String _contrasena = '';
   String _nombres = '';
   String _correo = '';
+  bool _estado = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +45,10 @@ class _InputWidgetState extends State<InputWidget> {
               ),
               hintText: 'Escribe aqui correo electronico',
               labelText: 'Correo',
-              suffixIcon: Icon(Icons.accessibility),
+              suffixIcon: IconButton(
+                icon: Icon(Icons.email),
+                onPressed: () {},
+              ),
             ),
             onChanged: (input) {
               setState(() {
@@ -54,15 +58,33 @@ class _InputWidgetState extends State<InputWidget> {
           ),
           Divider(),
           TextField(
-            obscureText: true,
+            obscureText: _estado,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
               hintText: 'Escribe aqui la contraseña',
+              hintStyle: TextStyle(color: Color.fromARGB(103, 255, 193, 7)),
               labelText: 'Contraseña',
-              suffixIcon: Icon(Icons.password),
+              labelStyle: TextStyle(color: Colors.orange),
+              suffixIcon: IconButton(
+                icon: Icon(
+                  _estado
+                      ? Icons.remove_red_eye
+                      : Icons.remove_red_eye_outlined,
+                  color: Colors.orange,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _estado = !_estado;
+                  });
+                },
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide(color: Colors.orange),
+              ),
             ),
             onChanged: (input) {
               setState(() {
